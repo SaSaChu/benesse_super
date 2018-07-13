@@ -49,6 +49,18 @@ html {
     display: inline-block;
     width: 100%;
     max-width: 1920px;
+
+    @include range-width(0, 1090px) {
+      display: none;
+    }
+
+    &.m_ts {
+      display: none;
+
+      @include range-width(0, 1090px) {
+        display: inline-block;
+      }
+    }
   }
 
   .nav_boxs {
@@ -57,6 +69,10 @@ html {
     position: absolute;
     left: 0;
     bottom: -54px;
+
+    @include range-width(0, 1090px) {
+      bottom: -19px;
+    }
 
     .nav_box {
       display: inline-block;
@@ -68,9 +84,17 @@ html {
         cursor: pointer;
         width: 100%;
         max-width: 330px;
+
+        @include range-width(0, 1090px) {
+          max-width: 100px;
+        }
         
         &:nth-child(2) {
           margin: 0 20px;
+
+          @include range-width(0, 450px) {
+            margin: 0 3px;
+          }
         }
 
         &.nav01 {
@@ -79,8 +103,17 @@ html {
           background-position: center;
           height: 200px;
 
+          @include range-width(0, 450px) {
+            background-image: url(../img/m_nav01.png);
+            height: 151px;
+          }
+
           &:hover, &.nav01a {
             background-image: url(../img/nav01a.png);
+
+            @include range-width(0, 450px) {
+              background-image: url(../img/m_nav01a.png);
+            }
           }
         }
 
@@ -90,8 +123,17 @@ html {
           background-position: center;
           height: 200px;
 
+          @include range-width(0, 450px) {
+            background-image: url(../img/m_nav02.png);
+            height: 151px;
+          }
+
           &:hover, &.nav02a {
             background-image: url(../img/nav02a.png);
+
+            @include range-width(0, 450px) {
+              background-image: url(../img/m_nav02a.png);
+            }
           }
         }
 
@@ -101,8 +143,17 @@ html {
           background-position: center;
           height: 200px;
 
+          @include range-width(0, 450px) {
+            background-image: url(../img/m_nav03.png);
+            height: 151px;
+          }
+
           &:hover, &.nav03a {
             background-image: url(../img/nav03a.png);
+
+            @include range-width(0, 450px) {
+              background-image: url(../img/m_nav03a.png);
+            }
           }
         }
       }
@@ -118,16 +169,32 @@ html {
   max-width: 1300px;
   margin-bottom: 100px;
 
+  @include range-width(0, 1330px) {
+    padding: 0 15px;
+  }
+
   .cent_boxs {
     display: inline-block;
     @include clearfix();
     padding: 20px;
+
+    @include range-width(0, 450px) {
+      padding: 15px;
+    }
 
     &.blue100, &.orange100 {
       width: 100%;
       max-width: 1300px;
       margin-top: 80px;
       @include border-radius(10px);
+
+      @include range-width(350px, 450px) {
+        margin-top: 120px;
+      }
+
+      @include range-width(0, 350px) {
+        margin-top: 100px;
+      }
     }
 
     &.blue100 {
@@ -142,6 +209,18 @@ html {
       width: calc(50% - 40px);
       margin-top: 80px;
       @include border-radius(10px);
+
+      @include range-width(0, 450px) {
+        width: 100%;
+      }
+
+      @include range-width(350px, 450px) {
+        margin-top: 120px;
+      }
+
+      @include range-width(0, 350px) {
+        margin-top: 100px;
+      }
     }
 
     &.blue50 {
@@ -164,6 +243,8 @@ html {
 
       &.cent50 {
         width: 50%;
+
+        @include range-width(0, 450px) { width: 100%;}
       }
 
       .cent_cat {
@@ -171,11 +252,39 @@ html {
         width: 50%;
         float: left;
 
+        @include range-width(0, 450px) { 
+          width: 100%;
+          position: relative;
+        }
+
+
         // img
         .st { 
           display: inline-block;
           width: 90%;
           padding-top: 30px;
+
+          @include range-width(0, 450px) {display: none;}
+        }
+
+        .m_st {
+          display: none;
+
+          @include range-width(321px, 450px) {
+            display: inline-block;
+            width: 70%;
+            position: absolute;
+            top: -125px;
+            left: 15%;
+          }
+
+          @include range-width(0, 321px) {
+            display: inline-block;
+            width: 70%;
+            position: absolute;
+            top: -97px;
+            left: 15%;
+          }
         }
 
         .download_btn {
@@ -191,6 +300,20 @@ html {
           bottom: 10px;
           left: 50px;
           line-height: 33px;
+
+          @include range-width(0, 450px) {
+            display: none;
+          }
+
+          &.m_sbtn {
+            display: none;
+
+            @include range-width(0, 450px) {
+              display: inline-block;
+              position: static;
+              margin-top: 30px;
+            }
+          }
 
           background: rgb(125,185,232); /* Old browsers */
           background: -moz-linear-gradient(top, rgba(125,185,232,1) 0%, rgba(32,124,202,1) 61%, rgba(30,87,153,1) 100%); /* FF3.6-15 */
@@ -228,6 +351,14 @@ html {
           border: 1px solid rgba(180, 179, 180, .5);
           box-shadow:0px 0px 9px rgba(180, 179, 180, .5);
           position: relative;
+
+          @include range-width(350px, 450px) {
+            margin-top: 60px;
+          }
+
+          @include range-width(0, 350px) {
+            margin-top: 30px;
+          }
 
           .pic_hover {
             display: inline-block;
@@ -285,6 +416,49 @@ footer {
   font-size: 14px;
   color: rgba(163, 163, 163, 1.00);
   margin-bottom: 20px;
+}
+
+
+
+#top_btn {
+  display: inline-block;
+  position: absolute;
+  bottom: 120px;
+  right: 25px;
+  width:60px;
+  height:60px;
+  z-index: 25;
+  color: white;
+  cursor: pointer;
+  background-color: rgba(255, 0, 63, 1.00);
+  @include border-radius(10px);
+
+  &:before {
+    display: inline-block;
+    content: '\e255';
+    font-family: icomoon;
+    font-size: 36px;
+    width: 100%;
+    margin-bottom: -5px;
+  }
+  
+  @include range-width(780px, 930px) {
+    bottom: 150px;
+  }
+
+  @include range-width(450px, 780px) {
+    bottom: 200px;
+  }
+
+  @include range-width(0, 450px) {
+    right: 10px;
+    bottom: 200px;
+    width:50px;
+    height:50px;
+    &:before {
+      font-size: 30px;
+    }
+  }
 }
 
 
