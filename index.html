@@ -9,10 +9,11 @@
 
     <link href="css/public.css" rel="stylesheet" type="text/css" />
     <link href="css/icon.css" rel="stylesheet" type="text/css" />
+    <link href="css/read_box.css" rel="stylesheet" type="text/css" />
 
     <script src="js/jquery_v1.10.2/jquery-1.10.2.min.js" language="javascript" type="text/javascript" ></script>
     <script src="js/public.js" language="javascript" type="text/javascript" ></script>
-    <script src="js/imgLiquid-min.js"></script>
+    <script src="js/imgLiquid/imgLiquid-min.js"></script>
 
   </head>
 
@@ -51,7 +52,7 @@
           <div class='cent_cat'>
             <div class='cat_pic_box'>
               <a class='pic_hover'>
-                <button>線上閱讀</button>
+                <button class='read_box' data-pics='["img/cover1.png", "img/cover2.png", "img/cover3.png"]'>線上閱讀</button>
               </a>
               <img src="img/cover.png">
             </div>
@@ -71,7 +72,7 @@
           <div class='cent_cat'>
             <div class='cat_pic_box'>
               <a class='pic_hover'>
-                <button>線上閱讀</button>
+                <button class='read_box' data-pics='["img/cover1.png", "img/cover2.png", "img/cover3.png"]'>線上閱讀</button>
               </a>
               <img src="img/cover.png">
             </div>
@@ -91,7 +92,7 @@
           <div class='cent_cat'>
             <div class='cat_pic_box'>
               <a class='pic_hover'>
-                <button>線上閱讀</button>
+                <button class='read_box' data-pics='["img/cover1.png", "img/cover2.png", "img/cover3.png"]'>線上閱讀</button>
               </a>
               <img src="img/cover.png">
             </div>
@@ -111,7 +112,7 @@
           <div class='cent_cat'>
             <div class='cat_pic_box'>
               <a class='pic_hover'>
-                <button>線上閱讀</button>
+                <button class='read_box' data-pics='["img/cover1.png", "img/cover2.png", "img/cover3.png"]'>線上閱讀</button>
               </a>
               <img src="img/cover.png">
             </div>
@@ -130,5 +131,28 @@
 
     <div id='top_btn'>回頂端</div>
     
+
+    <div id='read_box'>
+
+      <div class='pic h'></div>
+
+      <div class='bottom'>
+        <div class='center'>
+          <a class='icon-angle-double-left double-left'></a>
+          <a class='icon-angle-left left'></a>
+          
+          <span data-a='1' data-b='20'></span>
+
+          <a class='icon-angle-right right'></a>
+          <a class='icon-angle-double-right double-right'></a>
+        </div>
+      </div>
+
+      <a class='icon-x close'></a>
+      <a class='icon-angle-left left'></a>
+      <a class='icon-angle-right right'></a>
+
+      <div class='cover'></div>
+    </div>
   </body>
 </html>
