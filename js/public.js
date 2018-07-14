@@ -37,6 +37,7 @@ $(function () {
     now: -1,
     pics: [],
     inited: false,
+    addTime: false,
     init: function () {
       if (this.inited)
         return this.inited;
@@ -71,7 +72,7 @@ $(function () {
     },
     pic: function () {
       this.$bottomSpan.attr('data-a', this.now + 1).attr('data-b', this.pics.length);
-      var $img = $('<img />').attr('src', this.pics[this.now] + '?t=' + tt ());
+      var $img = $('<img />').attr('src', this.pics[this.now] + (this.addTime ? '?t=' + tt () : ''));
       this.$pic.empty().addClass('h').append($img);
 
       $img.load (function () {
