@@ -368,7 +368,7 @@
           }
           &.orange {
             span {
-                > * {
+                > *.a, >*:hover {
                 background-color: rgba(231, 85, 18, 1.00);
               }
             }
