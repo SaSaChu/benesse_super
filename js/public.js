@@ -24,7 +24,6 @@ $(function () {
     fill: false
   });
 
-  // $read_box = $('#read_box');
 
   var read_box = {
     $e: $('#read_box'),
@@ -101,7 +100,63 @@ $(function () {
       this.pic();
     }
   };
+  var video_box = {
+    $e: $('#video_box'),
+    $title: $('#video_box .top span'),
+    $video: $('#video_box .video'),
+    $close: $('#video_box .close'),
+    inited: false,
 
+    init: function () {
+      if (this.inited)
+        return this.inited;
+      this.$close.click(function () { this.close(); }.bind(this));
+      this.inited = true;
+      return this.inited;
+    },
+    show: function (title, src) {
+      this.init();
+      var $iframe = $('<iframe />').attr ('src', src).attr ('frameborder', 0).attr ('allow', 'autoplay; encrypted-media');
+      this.$title.text(title);
+      this.$video.append($iframe);
+      this.$e.addClass('s');
+    },
+    close: function () {
+      console.error ("x");
+      
+      this.$e.removeClass('s');
+      this.$video.empty();
+      this.$title.empty();
+    }
+  };
+
+  $('*[data-video_box_title][data-video_box_src]').click (function () {
+    video_box.show($(this).data('video_box_title'), $(this).data('video_box_src'));
+  });
+  $('.banners').each (function () {
+    var $that = $(this);
+
+    var total = $that.find('.items > *').length;
+    var type = $that.data('type');
+    $that.find('.pic').imgLiquid();
+
+    var $a = $(Array.apply(null, { length: Math.ceil(total / type) }).map (function () { return $('<a />'); })).map ($.fn.toArray).click(function () {
+      $(this).addClass('a').siblings().removeClass('a');
+      $that.attr('data-i', ($(this).index() * type + 1));
+    });
+
+    
+    $that.find('.pages').empty ().append($('<span />').append($a));
+    $that.find('.left').click (function () {
+      if ($a.filter('.a').prev().length) $a.filter('.a').prev().click();
+      else $a.last().click();
+    });
+    $that.find('.right').click (function () {
+      if ($a.filter('.a').next().length) $a.filter('.a').next().click();
+      else $a.first().click();
+    });
+    $a.first().addClass('a');
+  });
   $('.read_box').click (function () {
     read_box.show ($(this).data('pics'));
   });
