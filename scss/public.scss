@@ -288,11 +288,23 @@ html {
       }
     }
 
-    &.blue100 {
+    &.page_s {
+      margin-top: 180px;
+
+      @include range-width(350px, 450px) {
+        margin-top: 120px;
+      }
+
+      @include range-width(0, 350px) {
+        margin-top: 100px;
+      }
+    }
+
+    &.blue100, &.blue100_pa {
       border: 5px dotted rgba(59, 132, 193, 1.00);
     }
 
-    &.orange100 {
+    &.orange100, &.orange100_pa {
       border: 5px dotted rgba(252, 69, 4, 1.00);
     }
 
@@ -325,6 +337,10 @@ html {
       margin-left: 40px;
       float: right;
     }
+
+
+
+
 
     .cent_box {
       display: inline-block;
@@ -365,7 +381,7 @@ html {
             display: inline-block;
             width: 70%;
             position: absolute;
-            top: -125px;
+            top: -122px;
             left: 15%;
           }
 
@@ -373,7 +389,7 @@ html {
             display: inline-block;
             width: 70%;
             position: absolute;
-            top: -97px;
+            top: -94px;
             left: 15%;
           }
         }
@@ -496,6 +512,92 @@ html {
         }
       }
     }
+
+
+
+
+    .page_boxs {
+      display: inline-block;
+      width: 100%;
+      @include clearfix();
+      position: relative;
+
+      .p_st {
+        display: inline-block;
+        width: 228px;
+        position: absolute;
+        top: -125px;
+        left: calc(50% - 114px);
+
+        @include range-width(321px, 450px) {  
+          width: 240px;
+          top: -122px;
+          left: 15%;
+        }
+
+        @include range-width(0, 321px) {
+          width: 175px;
+          top: -94px;
+          left: 15%;
+        }
+      }
+
+      .page_box {
+        display: inline-block;
+        width: calc(50% - 35px);
+        float: left;
+
+        @include range-width(0, 450px) {
+          width: 100%;
+          margin-top: 30px;
+        }
+
+        &:nth-child(2) {
+          margin-right: 35px;
+
+          @include range-width(0, 450px) {
+            margin-right: 0;
+          }
+        }
+
+        &:nth-child(3) {
+          margin-left: 35px;
+
+          @include range-width(0, 450px) {
+            margin-left: 0;
+          }
+        }
+
+        p {
+          display: inline-block;
+          background-color: rgba(37, 116, 208, 1.00);
+          color: white;
+          padding: 3px 10px;
+          margin: 0 0 10px 0;
+          font-size: 30px;
+          font-weight: 600;
+          @include border-radius(30px);    
+
+          @include range-width(0, 450px) {
+            margin: 10px 0;
+          } 
+
+          &.orbg {
+            background-color: rgba(233, 78, 15, 1.00);
+          } 
+        }
+
+        .video_boxs {
+          display: inline-block;
+          width: 100%;
+          padding: 20px;
+          background-color: white;
+          @include border-radius(10px);
+          border: 1px solid rgba(180, 179, 180, .5);
+          box-shadow:0px 0px 9px rgba(180, 179, 180, .5);
+        }
+      }
+    }
   }
 }
 
@@ -544,7 +646,7 @@ footer {
 
   @include range-width(0, 450px) {
     right: 10px;
-    bottom: 200px;
+    bottom: 130px;
     width:50px;
     height:50px;
     font-size: 14px;
