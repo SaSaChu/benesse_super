@@ -4,6 +4,7 @@
  */
 
 @import "_oa";
+$maxCount: 50;
 
 .cent_boxs {
   position: relative;
@@ -118,6 +119,7 @@
                 font-weight: bold;
                 color: rgba(231, 231, 231, 1.00);
                 z-index: 2;
+                @include text-shadow(1px 1px 3px rgba(0, 0, 0, .3));
               }
             }
 
@@ -149,7 +151,7 @@
           .items {
             > .item {
               width: calc(100%);
-              @for $i from 1 through 10 {
+              @for $i from 1 through $maxCount {
                 &:nth-child(#{$i}) {
                   left: calc(100% * #{$i - 1} + 10px * #{$i - 1});
                 }
@@ -163,7 +165,7 @@
               width: calc(100% / 2);
               width: calc((100% / 2) - 10px * 1 / 2);
 
-              @for $i from 1 through 10 {
+              @for $i from 1 through $maxCount {
                 &:nth-child(#{$i}) {
                   left: calc(((100% / 2) - 10px * 1 / 2 + 10px) * #{$i - 1});
                 }
@@ -291,18 +293,18 @@
             height: calc(100% - 42px - (16px + 32px * 2));
             > .item {
               width: calc((100% / 2) - 20px * 1 / 2);
-              @for $i from 1 through 10 {
+              @for $i from 1 through $maxCount {
                 &:nth-child(#{$i}) {
                   left: calc(((100% / 2) - 20px * 1 / 2 + 20px) * #{$i - 1});
                 }
               }
             }
           }
-          @for $i from 1 through 10 {
+          @for $i from 1 through $maxCount {
             &[data-i="#{$i}"] {
               .items {
                 > .item {
-                  @for $j from 1 through 10 {
+                  @for $j from 1 through $maxCount {
                     &:nth-child(#{$j}) {
                       left: calc(((100% / 2) - 20px * 1 / 2 + 20px) * #{$j - $i});
                     }
@@ -316,18 +318,18 @@
           .items {
             > .item {
               width: calc((100% / 3) - 20px * 2 / 3);
-              @for $i from 1 through 10 {
+              @for $i from 1 through $maxCount {
                 &:nth-child(#{$i}) {
                   left: calc(((100% / 3) - 20px * 2 / 3 + 20px) * #{$i - 1});
                 }
               }
             }
           }
-          @for $i from 1 through 10 {
+          @for $i from 1 through $maxCount {
             &[data-i="#{$i}"] {
               .items {
                 > .item {
-                  @for $j from 1 through 10 {
+                  @for $j from 1 through $maxCount {
                     &:nth-child(#{$j}) {
                       left: calc(((100% / 3) - 20px * 2 / 3 + 20px) * #{$j - $i});
                     }

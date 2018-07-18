@@ -5,7 +5,7 @@
 
 @import "_oa";
 
-#read_box {
+#read_box2 {
   position: fixed;
   left: 0;
   top: 0;
@@ -25,39 +25,66 @@
     text-decoration: none;
     cursor: pointer;
   }
-  .pic {
+  .content {
     position: absolute;
     margin: 0 auto;
     display: inline-block;
     top: calc(50% - 55px / 2);
     @include transform(translateY(-50%));
+    // @include transition(top .3s, left .3s, height .3s, width .3s);
+    // background-color: white;
+    // &[data-text]:not([data-text='']) {
+    //   &:after {
+    //     content: attr(data-text);
+    //     position: absolute;
+    //     left: 0;
+    //     top: -36px;
+    //     display: inline-block;
+    //     width: 100%;
+    //     height: 36px;
+    //     color: white;
+    //     font-size: 28px;
+    //     @include overflow-docx3();
+    //   }
+    // }
+    // img {
+    //   position: absolute;
+    //   left: 0;
+    //   top: 0;
+    //   display: inline-block;
+    //   width: 100%;
+    //   height: 100%;
+    // }
 
+    // &.h {
+    //   height: 32px;
+    //   width: 100px;
+    //   line-height: 32px;
 
-    @include transition(top .3s, left .3s, height .3s, width .3s);
-    background-color: white;
-    
-    img {
-      position: absolute;
-      left: 0;
-      top: 0;
+    //   left: calc(50% - 100px / 2);
+    //   @include border-radius(3px);
+
+    //   &:after {
+    //     content: '讀取中..';
+    //   }
+    //   img {
+    //     display: none;
+    //   }
+    // }
+    span {
       display: inline-block;
       width: 100%;
-      height: 100%;
+      height: 28px;
+      line-height: 28px;
+      font-size: 20px;
+      color: white;
+      @include overflow-docx3();
     }
-
-    &.h {
-      height: 32px;
-      width: 100px;
-      line-height: 32px;
-
-      left: calc(50% - 100px / 2);
-      @include border-radius(3px);
-
-      &:before {
-        content: '讀取中..';
-      }
+    .pic {
+      display: inline-block;
+      width: 100%;
       img {
-        display: none;
+        width: 100%;
       }
     }
   }
@@ -99,7 +126,6 @@
     display: inline-block;
     width: 100%;
     height: $h;
-    background-color: rgba(0, 0, 0, 1.00);
     text-align: center;
 
     .center {
