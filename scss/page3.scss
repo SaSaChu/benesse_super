@@ -18,6 +18,21 @@
     @include clearfix();
     padding: 10px;
 
+    &.p4_boxs_no {
+      border-top: 0;
+      background-image: none;
+      margin-top: 20px;
+      padding: 0;
+
+      @include range-width(0, 450px) {
+        margin-top: 30px;
+        border-top: 0;
+        box-shadow: none;
+        border-radius: 0;
+        background-image: none;
+      }
+    }
+
     @include range-width(0, 450px) {
       margin-top: 40px;
       border-top: 1px solid rgba(219, 218, 219, 1.00);
@@ -96,6 +111,10 @@
             &.n_blue {
               color: rgba(18, 123, 225, 1.00);
             }
+
+            &.p4_name {
+              margin-top: 30px;
+            }
           }
         }
       }
@@ -165,6 +184,16 @@
         width: 100%;
         margin-left: 0;
         margin-top: 15px;
+      }
+
+      &.p4_no {
+        border-bottom: 0;
+        box-shadow: none;
+        background-image: none;
+
+        @include range-width(0, 450px) {
+          padding: 0;
+        }
       }
 
       .p_type_box {
@@ -349,6 +378,10 @@
         border-top-color: #ffffff;
         border-width: 30px;
         margin-left: -30px;
+
+        @include range-width(0, 450px) {
+          border-top-color: rgba(226, 226, 228, 1.00);
+        }
       }
       &:before {
         border-color: rgba(1, 135, 222, 0);
@@ -374,6 +407,10 @@
       border-top-color: #ffffff;
       border-width: 30px;
       margin-left: -30px;
+
+      @include range-width(0, 450px) {
+        border-top-color: rgba(226, 226, 228, 1.00);
+      }
     }
     &:before {
       border-color: rgba(228, 35, 136, 0);
@@ -386,11 +423,20 @@
       display: inline-block;
       float: left;
       margin: 40px 0;
+
+      @include range-width(0, 450px) {
+        margin: 0;
+      }
     }
 
     .pink_l {
       width: 325px;
       @include clearfix();
+
+      @include range-width(0, 450px) {
+        width: 100%;
+        margin-top: 30px;
+      }
 
       .p_close {
         display: inline-block;
@@ -401,6 +447,10 @@
         color: white;
         font-size: 16px;
         float: left;
+
+        @include range-width(0, 450px) {
+          display: none;
+        }
 
         &.p_close_b {
           background-color: rgba(1, 135, 222, 1);
@@ -440,6 +490,10 @@
           font-weight: 600;
           color: #fffbd8;
           @include text-shadow(1px 1px 6px rgb(167, 124, 1));
+
+          @include range-width(0, 450px) {
+            display: none;
+          }
 
           &:before {
             display: inline-block;
@@ -487,11 +541,19 @@
             margin-bottom: 10px;
             @include transition(all .3s);
 
+            @include range-width(0, 450px) {
+              font-size: 20px;
+            }
+
             &:after {
               display: inline-block;
               content: '月';
               font-size: 16px;
               margin-top: 10px;
+
+              @include range-width(0, 450px) {
+                margin-top: 3px;
+              }
             }
 
             &:nth-child(4n+4) {
@@ -521,9 +583,14 @@
     }
 
     .pink_r {
-      width: calc(100% - 325px);
       width: calc(100% - 325px - 10px);
       margin-left: 10px;
+
+      @include range-width(0, 450px) {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+      }
 
       .op_type_box {
         display: inline-block;
@@ -557,7 +624,12 @@
           }
 
           @include range-width(0, 450px) {
-            display: none;
+            font-size: 20px;
+            width: 100%;
+            text-align: center;
+            background-color: white;
+            @include border-radius(10px);
+            
           }
         }
 
