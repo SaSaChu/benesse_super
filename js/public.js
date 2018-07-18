@@ -315,6 +315,9 @@ $(function () {
     });
   });
 
+  $('.p_close').click (function () {
+    $(this).parents('.pink_down_boxs').prev().removeClass('show');
+  });
   $('.showblockbtn').click (function () {
     $(this).parents('.p3_boxs').toggleClass ('show');
   });
