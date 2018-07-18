@@ -273,6 +273,27 @@ html {
       padding: 15px;
     }
 
+    .st_page03 { 
+      display: inline-block;
+      position: absolute;
+      top: -102px;
+      left: 0;
+
+      @include range-width(321px, 450px) {
+        width: 70%;
+        top: -122px;
+        left: 15%;
+        z-index: 40px;
+      }
+
+      @include range-width(0, 321px) {
+        width: 70%;
+        top: -94px;
+        left: 15%;
+        z-index: 40px;
+      }
+    }
+
     &.blue100, &.orange100 {
       width: 100%;
       max-width: 1300px;
@@ -306,6 +327,25 @@ html {
 
     &.orange100, &.orange100_pa {
       border: 5px dotted rgba(252, 69, 4, 1.00);
+    }
+
+    &.blue_page03 { 
+      @include border-radius(10px);
+      width: 100%;
+      border-top: 5px dotted rgba(59, 132, 193, 1.00); 
+
+      @include range-width(0, 450px) {
+        border: 5px dotted rgba(59, 132, 193, 1.00);
+      }
+    }
+
+    &.oragne_page03 { 
+      width: 100%;
+      border-top: 5px dotted rgba(252, 69, 4, 1.00);
+
+      @include range-width(0, 450px) {
+        border: 5px dotted rgba(252, 69, 4, 1.00);
+      } 
     }
 
     &.blue50, &.orange50 {
@@ -363,7 +403,6 @@ html {
           width: 100%;
           position: relative;
         }
-
 
         // img
         .st { 

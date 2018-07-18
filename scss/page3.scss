@@ -1,0 +1,243 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2018 ZEUS Design
+ */
+
+@import "_oa";
+
+.cent_boxs {
+  position: relative;
+
+  .p3_boxs {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+    border-top: 1px solid rgba(231, 40, 147, 1.00);
+    @include background-image(linear-gradient(rgba(253,229,246,1) 0%, rgba(255,255,255,1) 100%));
+
+    @include clearfix();
+    padding: 10px;
+
+    @include range-width(0, 450px) {
+      margin-top: 40px;
+      border-top: 1px solid rgba(219, 218, 219, 1.00);
+      @include box-shadow(0 1px 2px rgba(0, 0, 0, .3));
+      @include border-radius(10px);
+      @include background-image(linear-gradient(rgba(255, 255, 255, 1.00) 0%, rgba(229, 230, 231, 1.00) 100%));
+    }
+    
+    &.p3_blue {
+      border-top: 1px solid rgba(57, 157, 216, 1.00);
+      @include background-image(linear-gradient(rgba(214,241,255,1) 0%, rgba(255,255,255,1) 100%));
+
+      @include range-width(0, 450px) {
+        margin-top: 40px;
+        border-top: 1px solid rgba(219, 218, 219, 1.00);
+        @include box-shadow(0 1px 2px rgba(0, 0, 0, .3));
+        @include border-radius(10px);
+        @include background-image(linear-gradient(rgba(255, 255, 255, 1.00) 0%, rgba(229, 230, 231, 1.00) 100%));
+      }
+    }
+
+    .p3_l {
+      display: inline-block;
+      width: 100%;
+      max-width: 325px;
+      float: left;
+
+      @include range-width(0, 450px) {
+        max-width: none;
+      }
+
+      .p3_title {
+        display: inline-block;
+        width: 100%;
+        max-width: 325px;
+        height: 281px;
+        background-image: url(../img/pink.png);
+        background-repeat: no-repeat;
+        position: relative;
+        margin-bottom: 10px;
+
+        &.t_blue {
+          background-image: url(../img/blue.png);
+          background-repeat: no-repeat;
+        }
+
+        .p3_type {
+          display: inline-block;
+          width: 100%;
+          padding: 12px 93px 0 55px;
+
+          @include range-width(0, 450px) {
+            display: none;
+          }
+
+          .mou {
+            display: inline-block;
+            width: 100%;
+            color: white;
+            font-size: 30px;
+            font-weight: 600;
+          }
+          .name {
+            display: inline-block;
+            width: 100%;
+            color: rgba(199, 0, 111, 1.00);
+            font-size: 26px;
+            background-color: white;
+            padding: 3px 10px;
+            @include border-radius(30px);
+
+            &.n_blue {
+              color: rgba(18, 123, 225, 1.00);
+            }
+          }
+        }
+      }
+    }
+
+    .p3_r {
+      display: inline-block;
+      width: calc(100% - 325px - 10px);
+      float: left;
+      margin-left: 10px;
+      @include box-shadow(0 1px 2px rgba(0, 0, 0, .3));
+      @include border-radius(10px);
+      @include background-image(linear-gradient(rgba(255, 255, 255, 1.00) 0%, rgba(229, 230, 231, 1.00) 100%));
+      padding: 10px;
+      text-align: left;
+
+      @include range-width(0, 450px) {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .p_type_box {
+        display: inline-block;
+        width: 100%;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid rgba(220, 0, 121, 1.00);
+        @include clearfix();
+
+        @include range-width(0, 450px) {
+          border-bottom: 0;
+        }
+        
+        &.b_line {
+          border-bottom: 1px solid rgba(18, 123, 225, 1.00);
+
+          @include range-width(0, 450px) {
+            border-bottom: 0;
+          }
+        }
+
+        p {
+          display: inline-block;
+          padding: 0;
+          margin: 0;
+          font-size: 30px;
+          color: rgba(220, 0, 121, 1.00);
+
+          &.p_blue {
+            color: rgba(18, 123, 225, 1.00);
+          }
+
+          @include range-width(0, 450px) {
+            display: none;
+          }
+        }
+
+        .p3_d {
+          display: inline-block;
+          padding: 3px 10px;
+          font-weight: 20px;
+          float: right;
+          @include background-image(linear-gradient(rgba(59, 179, 255, 1.00) 0%, rgba(1, 136, 223, 1.00) 100%));
+          @include border-radius(10px);
+          color: white;
+          font-size: 20px;
+          line-height: 33px;
+          outline: 0;
+          cursor: pointer;
+
+          &:before {
+            display: inline-block;
+            content: '';
+            background-image: url(../img/arrow_d.png);
+            width: 28px;
+            height: 33px;
+            margin-right: 3px;
+          }
+
+          @include range-width(0, 450px) {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .ot, .iwant {
+      display: inline-block;
+      cursor: pointer;
+      width: 100%;
+      @include border-radius(10px);
+      color: white;
+      font-weight: 600;
+      @include text-shadow(0 1px 2px rgba(0, 0, 0, .5));
+      margin-bottom: 10px;
+      padding: 3px 0;
+      outline: 0;
+
+      @include range-width(0, 450px) {
+        display: none;
+      }
+
+      &.mo_show {
+        display: none;
+        
+        @include range-width(0, 450px) {
+          display: inline-block;
+        }
+      }
+    }
+
+    .ot {
+      @include background-image(linear-gradient(rgba(251, 245, 15, 1.00) 0%, rgba(254, 176, 16, 1.00) 100%));
+      line-height: 40px;
+      font-size: 30px;
+
+      &:before {
+        display: inline-block;
+        content: '';
+        background-image: url(../img/co.png);
+        width: 45px;
+        height: 40px;
+        margin-right: 3px;
+      }
+    }
+
+    .iwant {
+      @include background-image(linear-gradient(rgba(250, 23, 149, 1.00) 0%, rgba(220, 1, 124, 1.00) 100%));
+      line-height: 77px;
+      font-size: 50px;
+
+       &:before {
+        display: inline-block;
+        content: '';
+        background-image: url(../img/pen.png);
+        width: 51px;
+        height: 77px;
+        margin-right: 3px;
+      }
+
+      &.i_blue {
+        @include background-image(linear-gradient(rgba(59, 179, 255, 1.00) 0%, rgba(1, 136, 223, 1.00) 100%));
+      }
+    }
+  }
+}
+
+
+
+
