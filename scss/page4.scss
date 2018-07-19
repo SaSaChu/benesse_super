@@ -20,6 +20,10 @@
         width: 100%;
         padding-top: 10px;
 
+        @include range-width(0, 450px) {
+          padding-top: 0;
+        }
+
         .table_box {
           display: inline-block;
           width: 100%;
@@ -34,6 +38,7 @@
 
             @include range-width(0, 450px) {
               width: 100%;
+              margin-bottom: 5px;
             }
           }
           
@@ -98,7 +103,7 @@
         @include range-width(0, 450px) {
           width: 100%;
           font-size: 20px;
-          padding: 10px 0;
+          padding: 5px 0;
         }
       }
 
@@ -107,6 +112,10 @@
         width: 100%;
         @include clearfix();
         margin-top: 50px;
+
+        @include range-width(0, 450px) {
+          margin-top: 25px;
+        }
 
         .btn_ok {
           display: inline-block;
@@ -130,6 +139,10 @@
 
             &:first-child {
               margin-left: 0;
+            }
+
+            &:last-child {
+              float: right;
             }
           }
 

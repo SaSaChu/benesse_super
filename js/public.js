@@ -329,4 +329,13 @@ $(function () {
   $('#alert_ok .close').click(function () {
     $('#alert_ok').removeClass ('s');
   });
+
+
+  $('.alert_ok_b').click (function () {
+    $('#alert_ok_b').addClass ('s_b');
+  });
+
+  $('#alert_ok_b .close_b').click(function () {
+    $('#alert_ok_b').removeClass ('s_b');
+  });
 });

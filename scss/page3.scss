@@ -30,7 +30,8 @@
       padding: 0;
 
       @include range-width(0, 450px) {
-        margin-top: 30px;
+        margin-bottom: 50px;
+        margin-top: 20px;
         border-top: 0;
         box-shadow: none;
         border-radius: 0;
@@ -78,6 +79,56 @@
         background-repeat: no-repeat;
         position: relative;
         margin-bottom: 10px;
+
+        &.p4m_s {
+          display: none;
+
+          @include range-width(0, 450px) {
+            display: inline-block;
+            width: 100%;
+            max-width: 150px;
+            height: 130px;
+            background-image: url(../img/m_pink_p4.png);
+            float: left;
+
+            span {
+              display: inline-block;
+              background-color: white;
+              font-size: 16px;
+              color: rgba(215, 0, 110, 1.00);
+              @include border-radius(30px);
+              padding: 3px 10px;
+              margin-top: 17px;
+              margin-left: 23px;
+              float: left;
+            }
+          }
+        }
+
+        &.p4m_b {
+          display: none;
+
+          @include range-width(0, 450px) {
+            display: inline-block;
+            width: 100%;
+            max-width: 150px;
+            height: 130px;
+            background-image: url(../img/m_blue_p4.png);
+            float: left;
+
+            span {
+              display: inline-block;
+              background-color: white;
+              font-size: 16px;
+              color: rgba(0, 136, 227, 1.00);
+              @include border-radius(30px);
+              padding: 3px 10px;
+              margin-top: 17px;
+              margin-left: 23px;
+              float: left;
+            }
+          }
+        }
 
         @include range-width(0, 450px) {
           display: none;
@@ -172,6 +223,22 @@
           width: 100%;
         }
       }
+
+      .pppp {
+        display: none;
+
+        @include range-width(0, 450px) {
+          display: inline-block;
+          font-size: 30px;
+          font-weight: 600;
+          color: rgba(186, 0, 104, 1.00);
+          text-align: left;
+
+          &.pppp_b {
+            color: rgba(0, 131, 220, 1.00);
+          }
+        }
+      }
     }
 
     .p3_r {
@@ -202,6 +269,7 @@
 
         @include range-width(0, 450px) {
           padding: 0;
+          margin-top: 0;
         }
       }
 
@@ -214,6 +282,7 @@
 
         @include range-width(0, 450px) {
           border-bottom: 0;
+          padding: 0;
         }
         
         &.b_line {
