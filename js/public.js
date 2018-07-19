@@ -24,6 +24,25 @@ $(function () {
   $('._ic').imgLiquid ({
   });
 
+  function scrollEnable() {
+    var html = jQuery('html');
+    var scrollPosition = html.data('scroll-position');
+    html.css('overflow', html.data('previous-overflow'));
+    window.scrollTo(scrollPosition[0], scrollPosition[1]);
+  }
+  function scrollDisable() {
+    var scrollPosition = [
+      self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+      self.pageYOffset || document.documentElement.scrollTop  || document.body.scrollTop
+    ];
+
+    var html = jQuery('html'); // it would make more sense to apply this to body, but IE7 won't have that
+    html.data('scroll-position', scrollPosition);
+    html.data('previous-overflow', html.css('overflow'));
+    html.css('overflow', 'hidden');
+    window.scrollTo(scrollPosition[0], scrollPosition[1]);
+  }
+
   var read_box = {
     $e: $('#read_box'),
     $close: $('#read_box .close'),
@@ -52,6 +71,7 @@ $(function () {
       return this.inited;
     },
     close: function (pics) {
+      scrollEnable();
       this.$e.removeClass ('s');
       this.$pic.empty().addClass ('h');
       this.$bottomSpan.attr('data-a', '0').attr('data-b', '0');
@@ -68,6 +88,7 @@ $(function () {
       this.$e.addClass ('s');
 
       this.next ();
+      scrollDisable();
     },
     pic: function () {
       this.$bottomSpan.attr('data-a', this.now + 1).attr('data-b', this.pics.length);
@@ -129,6 +150,8 @@ $(function () {
       return this.inited;
     },
     close: function (pics) {
+      scrollEnable();
+
       this.$e.removeClass ('s');
       this.$content.empty().addClass ('h');
       this.$bottomSpan.attr('data-a', '0').attr('data-b', '0');
@@ -145,6 +168,7 @@ $(function () {
       this.$e.addClass ('s');
 
       this.next ();
+      scrollDisable();
     },
     pic: function () {
       this.$bottomSpan.attr('data-a', this.now + 1).attr('data-b', this.pics.length);
@@ -199,10 +223,10 @@ $(function () {
       this.$title.text(title);
       this.$video.append($iframe);
       this.$e.addClass('s');
+      scrollDisable();
     },
     close: function () {
-      console.error ("x");
-      
+      scrollEnable();
       this.$e.removeClass('s');
       this.$video.empty();
       this.$title.empty();
@@ -324,18 +348,22 @@ $(function () {
 
   $('.alert_ok').click (function () {
     $('#alert_ok').addClass ('s');
+    scrollDisable();
   });
 
   $('#alert_ok .close').click(function () {
     $('#alert_ok').removeClass ('s');
+    scrollEnable();
   });
 
 
   $('.alert_ok_b').click (function () {
     $('#alert_ok_b').addClass ('s_b');
+    scrollDisable();
   });
 
   $('#alert_ok_b .close_b').click(function () {
     $('#alert_ok_b').removeClass ('s_b');
+    scrollEnable();
   });
 });
