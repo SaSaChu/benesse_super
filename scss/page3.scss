@@ -21,6 +21,9 @@
       + .pink_down_boxs {
         display: inline-block;
       }
+      .showblockbtn {
+        display: none !important;
+      }
     }
 
     &.p4_boxs_no {
@@ -527,7 +530,7 @@
         float: left;
 
         @include range-width(0, 450px) {
-          display: none;
+          // display: none;
         }
 
         &.p_close_b {
