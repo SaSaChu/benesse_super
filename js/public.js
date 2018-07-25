@@ -152,7 +152,7 @@ $(function () {
     close: function (pics) {
       scrollEnable();
 
-      this.$e.removeClass ('s');
+      this.$e.removeClass ('s').removeClass ('v');
       this.$content.empty().addClass ('h');
       this.$bottomSpan.attr('data-a', '0').attr('data-b', '0');
       this.pics = [];
@@ -172,26 +172,34 @@ $(function () {
     },
     pic: function () {
       this.$bottomSpan.attr('data-a', this.now + 1).attr('data-b', this.pics.length);
-      var $img = $('<img />').attr('src', this.pics[this.now].src + (this.addTime ? '?t=' + tt () : ''));
-      var $div = $('<div />').addClass('pic').append($img);
-      this.$content.empty().addClass('h').append(this.pics[this.now].text).append($div);
 
-      $img.load (function () {
-        var w = $img.get (0).width, h = $img.get (0).height;
-        var mw = $(window).width() - 64 * 2 - 8 * 2, mh = $(window).height() - 55 - 8 * 2;
+      if (this.pics[this.now].video) {
+        var $iframe = $('<iframe />').attr ('src', this.pics[this.now].video).attr ('frameborder', 0).attr ('allow', 'autoplay; encrypted-media');
+        var $div = $('<div />').addClass('pic').append($iframe);
+        this.$content.empty().addClass('h').append(this.pics[this.now].text).append($div);
+        this.$content.removeClass('h').addClass('v');
+      } else {
+        var $img = $('<img />').attr('src', this.pics[this.now].src + (this.addTime ? '?t=' + tt () : ''));
+        var $div = $('<div />').addClass('pic').append($img);
+        this.$content.empty().addClass('h').append(this.pics[this.now].text).append($div);
 
-        if (w > mw) { h = mw / w * h; w = mw; }
-        if (h > mh) { w = mh / h * w; h = mh; }
+        $img.load (function () {
+          var w = $img.get (0).width, h = $img.get (0).height;
+          var mw = $(window).width() - 64 * 2 - 8 * 2, mh = $(window).height() - 55 - 8 * 2;
 
-        this.$content.css({
-          'width': w + 'px',
-          'left': 'calc((100% - ' + w + 'px) / 2)',
-        }).removeClass('h').append($div.css({
-          'height': h + 'px',
-          'line-height': h + 'px',
-        }));
+          if (w > mw) { h = mw / w * h; w = mw; }
+          if (h > mh) { w = mh / h * w; h = mh; }
 
-      }.bind(this));
+          this.$content.css({
+            'width': w + 'px',
+            'left': 'calc((100% - ' + w + 'px) / 2)',
+          }).removeClass('h').append($div.css({
+            'height': h + 'px',
+            'line-height': h + 'px',
+          }));
+        }.bind(this));
+      }
+
     },
     prep: function () {
       this.now = --this.now < 0 ? this.pics.length - 1 : this.now;
@@ -276,7 +284,7 @@ $(function () {
   });
 
   $('.read_box2').click (function () {
-    var datas = $(this).parent().find('.read_box2').map(function () { return {src: $(this).find('.pic img').attr('src'), text: $(this).find('.cover span').clone()}; }).toArray();
+    var datas = $(this).parent().find('.read_box2').map(function () { return {src: $(this).find('.pic img').attr('src'), video: $(this).find('.pic img').data('video_box_src'), text: $(this).find('.cover span').clone()}; }).toArray();
     read_box2.show(datas, $(this).index());
   });
 
