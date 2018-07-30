@@ -279,11 +279,10 @@ $(function () {
     $a.first().addClass('a');
   });
 
-  $('.read_box').click (function () {
+  $('body').on ('click', '.read_box', function() {
     read_box.show ($(this).data('pics'));
   });
-
-  $('.read_box2').click (function () {
+  $('body').on ('click', '.read_box2', function() {
     var datas = $(this).parent().find('.read_box2').map(function () { return {src: $(this).find('.pic img').attr('src'), video: $(this).find('.pic img').data('video_box_src'), text: $(this).find('.cover span').clone()}; }).toArray();
     read_box2.show(datas, $(this).index());
   });
