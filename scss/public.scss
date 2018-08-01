@@ -37,6 +37,7 @@ html {
   }
 }
 
+
 // mobile_menu
 .m_list {
   display: none;
@@ -656,6 +657,50 @@ footer {
   color: rgba(163, 163, 163, 1.00);
   margin-bottom: 20px;
 }
+
+
+
+
+#fl_btn {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  @include border-radius(10px);
+  position: fixed;
+  bottom: 195px;
+  right: 25px;
+  z-index: 25;
+  padding: 5px; 
+
+  font-size: 16px;
+  color: white;
+  background-color: rgba(75, 169, 205, 1.00);
+  font-weight: 600;
+
+  &:before {
+    display: inline-block;
+    content: '\e901';
+    font-family: icomoon;
+    font-size: 30px;
+    width: 100%;
+  }
+
+
+  @include range-width(0, 450px) {
+    right: 10px;
+    bottom: 185px;
+    width:50px;
+    height:50px;
+    font-size: 14px;
+    padding: 5px 0 0 0;
+
+    &:before {
+      font-size: 20px;
+    }
+  }
+}
+
+
 
 
 

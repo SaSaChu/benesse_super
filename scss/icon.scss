@@ -6,17 +6,8 @@
   @include font-smoothing(antialiased);
 }
 
-.icon-play:before {
-  content: "\e901";
-}
-.icon-publish:before {
-  content: "\e255";
-}
-.icon-x:before {
-  content: "\e900";
-}
-.icon-menu:before {
-  content: "\e90a";
+.icon-play-circle-o:before {
+  content: "\f01d";
 }
 .icon-angle-double-left:before {
   content: "\f100";
@@ -29,4 +20,16 @@
 }
 .icon-angle-right:before {
   content: "\f105";
+}
+.icon-publish:before {
+  content: "\e255";
+}
+.icon-menu:before {
+  content: "\e90a";
+}
+.icon-x:before {
+  content: "\e900";
+}
+.icon-home:before {
+  content: "\e901";
 }
