@@ -97,17 +97,22 @@ $(function () {
 
       $img.load (function () {
         var w = $img.get (0).width, h = $img.get (0).height;
-        var mw = $(window).width() - 64 * 2 - 8 * 2, mh = $(window).height() - 55 - 8 * 2;
+        // var mw = $(window).width() - 64 * 2 - 8 * 2, mh = $(window).height() - 55 - 8 * 2;
 
-        if (w > mw) { h = mw / w * h; w = mw; }
-        if (h > mh) { w = mh / h * w; h = mh; }
+        // if (w > mw) { h = mw / w * h; w = mw; }
+        // if (h > mh) { w = mh / h * w; h = mh; }
 
         this.$pic.css({
           // 'top': 'calc((100% - 55px - 4px * 2 - ' + h + 'px) / 2)',
-          'left': 'calc((100% - ' + w + 'px) / 2)',
-          'width': w + 'px',
-          'height': h + 'px',
-          'line-height': h + 'px',
+          
+          // 'left': 'calc((100% - ' + w + 'px) / 2)',
+          // 'width': w + '%',
+          // 'height': h + '%',
+          // 'line-height': h + '%',
+          'left': '10px',
+          'width': '95%',
+          'height': '85%',
+          // 'line-height': h + '%',
         }).removeClass('h');
 
       }.bind(this));
