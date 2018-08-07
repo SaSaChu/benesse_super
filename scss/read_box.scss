@@ -32,6 +32,12 @@
     top: calc(50% - 55px / 2);
     @include transform(translateY(-50%));
 
+    @include range-width(0, 450px) {
+      width: 95% !important;
+      height: 85% !important;
+      line-height: 85% !important;
+      left: 10px !important;
+    }
 
     @include transition(top .3s, left .3s, height .3s, width .3s);
     background-color: white;
